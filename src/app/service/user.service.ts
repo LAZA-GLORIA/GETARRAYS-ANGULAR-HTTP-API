@@ -10,6 +10,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  // Il faut souscrire à ces Observables sinon rien ne va s'afficher
+  // Notre observable ici va emettre (next) la réponse du serveur (les données venant du serveur)
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`https://jsonplaceholder.typicode.com/users`);
   }
